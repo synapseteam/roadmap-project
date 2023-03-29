@@ -1,0 +1,62 @@
+@import '../../_helpers/variables';
+
+.btn {
+  $padding--small-y: (9/16) * 1em;
+  $padding--small-x: 12/16 * 1em;
+  $padding--default-y: (20/16) * 1em;
+  $padding--default-x: 12/16 * 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  color: $brand-tertiary;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s linear all;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+  outline: none;
+  border-radius: 5px;
+
+  &-variant {
+    &--filled {
+      background-color: $brand-bg-modal;
+      border-color: $brand-border;
+      color: $brand-secondary;
+
+      &:hover {
+        background-color: $brand-bg-secondary;
+        color: $brand-primary;
+      }
+
+    }
+
+    &--outlined {
+      background: none;
+      border-color: $brand-border;
+      color: $brand-secondary;
+
+      &:hover {
+        background-color: $brand-bg-secondary;
+        color: $brand-primary;
+        border-color: $brand-primary;
+      }
+
+    }
+
+    &--text {
+      color: $brand-secondary;
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

@@ -1,0 +1,16 @@
+$brand-primary: #f6f7f7;
+$brand-secondary: #898e97;
+$brand-tertiary: #787f8c;
+$brand-fourth: #bdedfc;
+$brand-bg: #1e1f22;
+$brand-bg-secondary: #26272a;
+$brand-border: #2f3135;
+$brand-shadow: rgba(0,0,0,.2);
+$brand-bg-modal: #222326;
+$brand-shadow-modal: rgba(0,0,0,.5);
+$icon-base-size: 1rem;
+$icon-variants: (
+        '2x': $icon-base-size * 2,
+        '6x': $icon-base-size * 4,
+        '20x': 100px
+);
