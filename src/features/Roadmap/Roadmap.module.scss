@@ -1,0 +1,10 @@
+.roadmap {
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    height: calc(100vh - 157px);
+    min-height: 480px;
+    overflow: auto;
+  }
+}

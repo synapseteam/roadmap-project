@@ -2,16 +2,17 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer, Zoom } from "react-toastify";
 
-import FeaturePage from "./routes/FeaturePage";
-import HomePage from "./routes/HomePage";
-import RoadmapPage from "./routes/RoadmapPage";
+import Header from "./components/Header";
+import FeatureRequests from "./features/FeatureRequests";
+import Roadmap from "./features/Roadmap";
+import { APP_ROUTES } from "./utils/urls";
 
 import "react-toastify/dist/ReactToastify.css";
-import "./App.scss";
+import styles from "./App.module.scss";
 
 const App = (): JSX.Element => {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <ToastContainer
         draggable={false}
         transition={Zoom}
@@ -20,11 +21,16 @@ const App = (): JSX.Element => {
         pauseOnHover={false}
         hideProgressBar
       />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/roadmap" element={<RoadmapPage />} />
-        <Route path="/feature-requests" element={<FeaturePage />} />
-      </Routes>
+      <Header />
+      <div className={styles.App__page}>
+        <Routes>
+          <Route path={APP_ROUTES.home} element={<Roadmap />} />
+          <Route
+            path={APP_ROUTES.featureRequests}
+            element={<FeatureRequests />}
+          />
+        </Routes>
+      </div>
     </div>
   );
 };
