@@ -4,4 +4,8 @@
   min-height: 100%;
   overflow: hidden;
   align-items: stretch;
+
+  &__page {
+    padding: 0 32px;
+  }
 }

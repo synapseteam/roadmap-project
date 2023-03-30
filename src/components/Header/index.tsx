@@ -30,10 +30,9 @@ const Header: FC = (): JSX.Element => {
             variant="text"
             icon={faCalendar}
             iconSize={16}
-            href="/roadmap"
+            href="/"
             className={classnames(styles.header__navi_btn, {
-              [styles.header__navi_btn_active]:
-                location.pathname === "/roadmap",
+              [styles.header__navi_btn_active]: location.pathname === "/",
             })}
           />
           <Button
