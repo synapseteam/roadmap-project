@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer, Zoom } from "react-toastify";
 
 import Header from "./components/Header";
+import CardDetails from "./features/CardDetails";
 import FeatureRequests from "./features/FeatureRequests";
 import Roadmap from "./features/Roadmap";
 import { APP_ROUTES } from "./utils/urls";
@@ -28,6 +29,10 @@ const App = (): JSX.Element => {
           <Route
             path={APP_ROUTES.featureRequests}
             element={<FeatureRequests />}
+          />
+          <Route
+            path={APP_ROUTES.featureRequestsCard}
+            element={<CardDetails />}
           />
         </Routes>
       </div>

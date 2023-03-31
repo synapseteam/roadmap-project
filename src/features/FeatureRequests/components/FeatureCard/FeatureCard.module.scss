@@ -3,40 +3,38 @@
 .card {
   &__container {
     border: 1px solid $brand-border;
-    background-color: $brand-bg;
+    background-color: $brand-bg-secondary;
     box-shadow: $brand-shadow 0 3px 12px;
-    border-radius: $border-radius;
-    display: flex;
-    flex-direction: column;
+    border-radius: $border-radius-big;
     transition: 0.2s linear all;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
     padding: 16px;
     cursor: pointer;
+    text-decoration: none;
+    color: $brand-secondary;
 
     &:hover {
-      background-color: $brand-bg-secondary;
+      background-color: $brand-bg;
     }
   }
 
   &__header {
     color: $brand-primary;
     font-weight: bold;
-    text-decoration: none;
-    transition: 0.2s linear all;
-    &:hover {
-      text-decoration: underline;
-    }
 
     &_container {
       display: flex;
-      justify-content: flex-start;
+      flex-direction: column;
+      gap: 15px;
     }
   }
   &__body {
     display: flex;
     align-items: center;
-    font-size: 12px;
-    gap: 10px;
+    gap: 20px;
 
     &_item {
       display: flex;

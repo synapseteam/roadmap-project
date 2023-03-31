@@ -50,11 +50,39 @@
   }
 
   &__modal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 32px 0;
+    &_body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+    }
+
+    &_bodyContainer {
+      padding: 8px 16px;
+    }
+
+    &_heading {
+      color: $brand-primary;
+      font-weight: bold;
+    }
+
+    &_headingContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      margin: 15px 0;
+    }
+
+    &_footer {
+      border-top: 1px solid $brand-border;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+    }
+
     &_btn {
       padding: 20px;
     }

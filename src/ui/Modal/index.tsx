@@ -42,10 +42,6 @@ const Modal: FC<Props> = ({
           onClick={onClose}
           icon={faXmark}
         />
-        <div className={styles.modal__heading_container}>
-          <span className={styles.modal__heading}>{title}</span>
-          <span>{subTitle}</span>
-        </div>
         {children}
       </div>
     </div>,

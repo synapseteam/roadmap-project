@@ -1,9 +1,4 @@
-import {
-  Action,
-  combineReducers,
-  configureStore,
-  ThunkAction,
-} from "@reduxjs/toolkit";
+import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
 import {
   FLUSH,
@@ -15,7 +10,7 @@ import {
 } from "redux-persist/es/constants";
 import storage from "redux-persist/lib/storage";
 
-const reducers = combineReducers({});
+import { rootReducer } from "./rootReducer";
 
 const persistConfig = {
   key: "root",
@@ -23,7 +18,7 @@ const persistConfig = {
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,

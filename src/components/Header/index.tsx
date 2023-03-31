@@ -11,12 +11,17 @@ import classnames from "classnames";
 import Logo from "../../assets/synapseteam-whitelogo.png";
 import Button from "../../ui/Button";
 import Modal from "../../ui/Modal";
+import ModalForm from "../ModalForm";
 
 import styles from "./Header.module.scss";
 
 const Header: FC = (): JSX.Element => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  const [isEmail, setIsEmail] = useState(false);
+  const [isFormShow, setIsFormShow] = useState(false);
+
   return (
     <header className={styles.header}>
       <div className={styles.header__menu}>
@@ -58,28 +63,69 @@ const Header: FC = (): JSX.Element => {
           onClick={() => setIsOpen(true)}
         />
       </div>
-      <Modal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        title="Sign up to post and vote"
-        subTitle="We use Noora to collect feedback"
-      >
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <div className={styles.header__modal}>
-          <Button
-            icon={faEnvelope}
-            iconSize={20}
-            size="default"
-            variant="outlined"
-            className={styles.header__modal_btn}
-          />
-          <span>or</span>
-          <Button
-            icon={faGoogle}
-            iconSize={20}
-            size="default"
-            variant="outlined"
-            className={styles.header__modal_btn}
-          />
+          <div className={styles.header__modal_headingContainer}>
+            <span className={styles.header__modal_heading}>
+              {isLogin && !isFormShow && "Log in to post and vote"}
+              {!isLogin && !isFormShow && "Sign up to post and vote"}
+              {isFormShow && `${isLogin ? "Log in" : "Sign up"} with email`}
+            </span>
+            <span>
+              {isLogin && !isFormShow && "We use Noora to collect feedback"}
+              {!isLogin && !isFormShow && ""}
+            </span>
+          </div>
+          <div className={styles.header__modal_bodyContainer}>
+            {isFormShow && (
+              <ModalForm
+                isEmail={isEmail}
+                isLogin={isLogin}
+                setIsForm={setIsFormShow}
+              />
+            )}
+            {!isFormShow && (
+              <div className={styles.header__modal_body}>
+                <Button
+                  icon={faEnvelope}
+                  iconSize={20}
+                  size="default"
+                  variant="outlined"
+                  className={styles.header__modal_btn}
+                  onClick={() => setIsFormShow(!isFormShow)}
+                />
+                <span>or</span>
+                <Button
+                  icon={faGoogle}
+                  iconSize={20}
+                  size="default"
+                  variant="outlined"
+                  className={styles.header__modal_btn}
+                />
+              </div>
+            )}
+          </div>
+          <div className={styles.header__modal_footer}>
+            {isFormShow ? (
+              <Button
+                variant="text"
+                size="default"
+                title="Forgot your password?"
+                onClick={() => setIsEmail(!isEmail)}
+              />
+            ) : (
+              <Button
+                variant="text"
+                size="default"
+                title={
+                  isLogin
+                    ? "Already have an account? Log in"
+                    : "Need an account? Sign up"
+                }
+                onClick={() => setIsLogin(!isLogin)}
+              />
+            )}
+          </div>
         </div>
       </Modal>
     </header>

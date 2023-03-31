@@ -2,7 +2,6 @@
 
 .modal {
   background-color: $brand-bg-modal;
-  padding: 16px 24px;
   border: 1px solid $brand-border;
   border-radius: $border-radius;
   box-shadow: $brand-shadow-modal 0 16px 70px;
@@ -34,19 +33,4 @@
       color: $brand-primary;
     }
   }
-
-  &__heading {
-    color: $brand-primary;
-    font-weight: bold;
-
-    &_container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 5px;
-      margin: 10px 0;
-    }
-  }
-
 }

@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { Droppable } from "react-beautiful-dnd";
 import classNames from "classnames";
 
 import { CardType } from "../../../../types";
+import { StrictModeDroppable } from "../../../../utils/StrictModeDroppable";
 import Card from "../Card";
 
 import styles from "./Board.module.scss";
@@ -17,7 +17,7 @@ type Props = {
 
 const Board: FC<Props> = ({ board }): JSX.Element => {
   return (
-    <Droppable droppableId={board.id.toString()}>
+    <StrictModeDroppable droppableId={board.id.toString()}>
       {(provided) => (
         <div
           className={styles.column__container}
@@ -48,7 +48,7 @@ const Board: FC<Props> = ({ board }): JSX.Element => {
           {provided.placeholder}
         </div>
       )}
-    </Droppable>
+    </StrictModeDroppable>
   );
 };
 

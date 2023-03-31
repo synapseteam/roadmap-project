@@ -1,0 +1,27 @@
+@import '../../_helpers/variables';
+
+.sidebar {
+  &__container {
+    background-color: $brand-bg-secondary;
+    padding: 16px;
+    width: 300px;
+    max-width: 300px;
+    border-radius: $border-radius-big;
+    border: 1px solid $brand-border;
+    position: sticky;
+    align-self: start;
+    top: 100px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__button {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
