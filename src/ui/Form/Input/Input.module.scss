@@ -1,0 +1,14 @@
+@import '../../../_helpers/variables';
+
+.input {
+  color: $brand-primary;
+  background-color: $brand-bg;
+  border: 1px solid $brand-border;
+  border-radius: $border-radius;
+  padding: 8px 16px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+}

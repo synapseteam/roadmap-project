@@ -21,3 +21,24 @@ export type ModalFormType = {
   email: string;
   password: string;
 };
+
+export type UserType = {
+  firstName: string;
+  lastName: string;
+};
+
+export type CommentType = {
+  author: UserType;
+  text: string;
+  createdAt: string;
+};
+
+export type CardDetailType = {
+  title: string;
+  description?: string;
+  author: UserType;
+  votes: number;
+  voters: UserType[];
+  createdAt: string;
+  comments: CommentType[];
+};

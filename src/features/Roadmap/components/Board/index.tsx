@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import classNames from "classnames";
 
+import Status from "../../../../components/Status";
 import { CardType } from "../../../../types";
 import { StrictModeDroppable } from "../../../../utils/StrictModeDroppable";
 import Card from "../Card";
@@ -24,18 +24,7 @@ const Board: FC<Props> = ({ board }): JSX.Element => {
           ref={provided.innerRef}
           {...provided.droppableProps}
         >
-          <div className={styles.column__header}>
-            <div
-              className={classNames(styles.column__header_icon, {
-                [styles.column__header_iconRed]: board.title === "Pending",
-                [styles.column__header_iconOrange]:
-                  board.title === "In progress",
-                [styles.column__header_iconGreen]: board.title === "Shipped",
-              })}
-            />
-            <span>{board.title}</span>
-          </div>
-
+          <Status status={board.title} />
           <div className={styles.column__body}>
             {board.items?.length ? (
               board.items.map((card, index) => (

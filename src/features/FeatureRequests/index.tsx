@@ -13,7 +13,7 @@ const FeatureRequests: FC = (): JSX.Element => {
 
   return (
     <div className={styles.featureRequests}>
-      <SideBar title="Create a Post" />
+      <SideBar title="Create a Post" isForm />
       <div className={styles.featureRequests__board}>
         {cardsReversed &&
           cardsReversed.map((card) => (

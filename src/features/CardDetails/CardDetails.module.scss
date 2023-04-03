@@ -1,0 +1,101 @@
+@import "../../_helpers/variables";
+
+.cardDetails {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  grid-template-rows: 10% 90%;
+  justify-self: center;
+  margin: 0 auto;
+  gap: 20px;
+  max-width: 960px;
+
+  &__heading {
+    font-size: 22px;
+    margin: 0;
+
+    &_container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__buttonBack {
+    grid-area: 1/1;
+    justify-self: flex-start;
+    font-size: 15px;
+  }
+
+  &__sideBar {
+    grid-area: 2/1;
+
+    &_voters {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    &_voterItem {
+      margin: 0 0 0 -6px;
+    }
+  }
+
+  &__content {
+    grid-area: 2/2;
+
+    &_header {
+      display: flex;
+      gap: 20px;
+    }
+
+    &_headerButton {
+      display: flex;
+      flex-direction: column;
+      font-size: 15px;
+      padding: 4px 8px;
+    }
+
+    &_author {
+      color: $brand-primary;
+      font-weight: bold;
+    }
+
+    &_authorContainer {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 20px;
+    }
+
+    &_date {
+      color: $brand-tertiary;
+    }
+
+    &_description {
+      margin-top: 20px;
+    }
+  }
+
+  &__comments {
+    margin-top: 20px;
+    &_container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    &_title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    &_inputContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_inputButton {
+      display: flex;
+      margin-top: 5px;
+    }
+  }
+}

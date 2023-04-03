@@ -1,8 +1,9 @@
 import React, { FC, useState } from "react";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 
+import data from "../../mock/roadmapData.json";
+
 import Board from "./components/Board";
-import data from "./mock.json";
 
 import styles from "./Roadmap.module.scss";
 

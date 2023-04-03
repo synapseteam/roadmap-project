@@ -13,30 +13,6 @@
     color: $brand-secondary
   }
 
-  &__header {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-
-    &_icon {
-      border-radius: 100%;
-      height: 8px;
-      margin-right: 8px;
-      min-width: 8px;
-      width: 8px;
-    }
-
-    &_iconRed {
-      background-color: $brand-error;
-    }
-    &_iconOrange {
-      background-color: $brand-warning;
-    }
-    &_iconGreen {
-      background-color: $brand-success;
-    }
-  }
-
   &__body {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,36 @@
+@import "../../../../_helpers/variables";
+
+.commentItem {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  &__author {
+    color: $brand-primary;
+    font-weight: bold;
+
+    &_container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
+  &__date {
+    color: $brand-tertiary;
+  }
+
+  &__text {
+    grid-area: 2/2;
+    margin-top: 10px;
+  }
+
+  &__buttons {
+    &_container {
+      grid-area: 3/2;
+      margin-top: 10px;
+      font-size: 12px;
+      display: flex;
+    }
+  }
+}

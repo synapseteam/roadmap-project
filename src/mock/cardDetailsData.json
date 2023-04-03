@@ -1,0 +1,31 @@
+{
+  "title": "Add backend to the application",
+  "description": "Add API for application",
+  "status": "Pending",
+  "author": {
+    "firstName": "John",
+    "lastName": "Wick"
+  },
+  "votes": 2,
+  "voters": [
+    {
+      "firstName": "Thor",
+      "lastName": "Odinson"
+    },
+    {
+      "firstName": "Captain",
+      "lastName": "America"
+    }
+  ],
+  "createdAt": "2022-10-05T14:48:00.000Z",
+  "comments": [
+    {
+      "author": {
+        "firstName": "Jackie",
+        "lastName": "Chan"
+      },
+      "text": "We need to add a database!",
+      "createdAt": "2011-11-05T15:48:00.000Z"
+    }
+  ]
+}

@@ -25,7 +25,7 @@ const Header: FC = (): JSX.Element => {
   return (
     <header className={styles.header}>
       <div className={styles.header__menu}>
-        <Button href="/" size="default">
+        <Button href="/" size="default" variant="text">
           <img src={Logo} alt="logo" className={styles.header__logo} />
         </Button>
         <div className={styles.header__navi}>
