@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
-import { cardsList } from "./slices/cardsListSlice";
+import { authUserReducer } from "./slices/authSlice";
+import { cardsListReducer } from "./slices/cardsListSlice";
 
 export const rootReducer = combineReducers({
-  cardList: cardsList,
+  cardList: cardsListReducer,
+  auth: authUserReducer,
 });

@@ -22,7 +22,9 @@
     {
       "author": {
         "firstName": "Jackie",
-        "lastName": "Chan"
+        "lastName": "Chan",
+        "id": 23,
+        "email": "chan@gmail.com"
       },
       "text": "We need to add a database!",
       "createdAt": "2011-11-05T15:48:00.000Z"

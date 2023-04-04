@@ -18,7 +18,7 @@ const CommentItem: FC<Props> = ({ author, text, createdAt }): JSX.Element => {
   return (
     <div className={styles.commentItem}>
       <div>
-        <UserIcon name={author.firstName} />
+        <UserIcon name={author.firstName ?? ""} />
       </div>
       <div>
         <div className={styles.commentItem__author_container}>

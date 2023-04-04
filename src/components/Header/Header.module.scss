@@ -19,6 +19,12 @@
     gap: 20px;
   }
 
+  &__user {
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+  }
+
   &__navi {
     display: flex;
     align-content: center;

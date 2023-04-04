@@ -17,9 +17,10 @@ const App = (): JSX.Element => {
       <ToastContainer
         draggable={false}
         transition={Zoom}
-        autoClose={5000}
+        autoClose={3000}
         position="top-center"
         pauseOnHover={false}
+        theme="dark"
         hideProgressBar
       />
       <Header />

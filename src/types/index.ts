@@ -23,8 +23,10 @@ export type ModalFormType = {
 };
 
 export type UserType = {
-  firstName: string;
-  lastName: string;
+  firstName: string | null;
+  lastName: string | null;
+  email: string | null;
+  id: string | number | null;
 };
 
 export type CommentType = {
