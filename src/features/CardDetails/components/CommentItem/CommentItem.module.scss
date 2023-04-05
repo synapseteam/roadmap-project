@@ -1,10 +1,8 @@
 @import "../../../../_helpers/variables";
 
 .commentItem {
-  display: grid;
-  grid-template-columns: 5% 95%;
-  grid-template-rows: 1fr 1fr 1fr;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   &__author {
     color: $brand-primary;
     font-weight: bold;
@@ -14,6 +12,11 @@
       align-items: center;
       gap: 5px;
     }
+  }
+
+  &__content {
+    padding-top: 5px;
+    padding-left: 30px;
   }
 
   &__date {

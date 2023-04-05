@@ -1,9 +1,10 @@
 import React, { FC, ReactNode } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { addCard } from "../../app/slices/cardsListSlice";
 import { SideBarFormType } from "../../types";
 import Button from "../../ui/Button";
@@ -24,6 +25,7 @@ type Props = {
 
 const SideBar: FC<Props> = ({ title, isForm, children }): JSX.Element => {
   const dispatch = useAppDispatch();
+  const userAuth = useAppSelector((state) => state.auth.user);
   const {
     handleSubmit,
     control,
@@ -34,13 +36,17 @@ const SideBar: FC<Props> = ({ title, isForm, children }): JSX.Element => {
   });
 
   const submitForm = (data: SideBarFormType) => {
-    dispatch(addCard(data));
-    reset(
-      { title: "", description: "" },
-      {
-        keepValues: false,
-      }
-    );
+    if (userAuth === null) {
+      toast.info("You have to sign up / sign in to add post");
+    } else {
+      dispatch(addCard(data));
+      reset(
+        { title: "", description: "" },
+        {
+          keepValues: false,
+        }
+      );
+    }
   };
 
   return (

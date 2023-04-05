@@ -4,6 +4,7 @@ import { faArrowLeft, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dayjs from "dayjs";
 
+import { useAppSelector } from "../../app/hooks";
 import SideBar from "../../components/SideBar";
 import Status from "../../components/Status";
 import UserIcon from "../../components/UserIcon";
@@ -18,6 +19,7 @@ import styles from "./CardDetails.module.scss";
 
 const CardDetails: FC = (): JSX.Element => {
   const navigate = useNavigate();
+  const userAuth = useAppSelector((state) => state.auth.user);
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmitComment = (e: KeyboardEvent) => {
@@ -53,8 +55,9 @@ const CardDetails: FC = (): JSX.Element => {
           <div className={styles.cardDetails__sideBar_voters}>
             {data.voters.map((voter) => (
               <UserIcon
-                key={voter.lastName}
-                name={voter.firstName}
+                user={voter}
+                key={voter.displayName}
+                isImageOnly
                 className={styles.cardDetails__sideBar_voterItem}
               />
             ))}
@@ -77,10 +80,7 @@ const CardDetails: FC = (): JSX.Element => {
           </div>
         </div>
         <div className={styles.cardDetails__content_authorContainer}>
-          <UserIcon name={data.author.firstName} />
-          <span className={styles.cardDetails__content_author}>
-            {data.author.firstName} {data.author.lastName}
-          </span>
+          <UserIcon user={data.author} />
           <span className={styles.cardDetails__content_date}>
             {parseISOString(data.createdAt)}
           </span>
@@ -90,15 +90,17 @@ const CardDetails: FC = (): JSX.Element => {
         </div>
         <div className={styles.cardDetails__comments_container}>
           <span className={styles.cardDetails__comments_title}>Comments</span>
-          <div className={styles.cardDetails__comments_inputContainer}>
-            <Input
-              name="comment"
-              value={inputValue}
-              placeholder="Add a comment ..."
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={handleSubmitComment}
-            />
-          </div>
+          {userAuth !== null && (
+            <div className={styles.cardDetails__comments_inputContainer}>
+              <Input
+                name="comment"
+                value={inputValue}
+                placeholder="Add a comment ..."
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={handleSubmitComment}
+              />
+            </div>
+          )}
           <div className={styles.cardDetails__comments}>
             {data.comments.map((comment) => (
               <CommentItem

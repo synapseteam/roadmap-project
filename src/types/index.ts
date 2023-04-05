@@ -17,14 +17,9 @@ export type SideBarFormType = {
   description?: string;
 };
 
-export type ModalFormType = {
-  email: string;
-  password: string;
-};
-
 export type UserType = {
-  firstName: string | null;
-  lastName: string | null;
+  displayName: string | null;
+  photoURL: string | null;
   email: string | null;
   id: string | number | null;
 };

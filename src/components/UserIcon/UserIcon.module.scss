@@ -11,4 +11,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 5px
+  }
+
+  &__img {
+    width: 24px;
+    height: 24px;
+  }
 }

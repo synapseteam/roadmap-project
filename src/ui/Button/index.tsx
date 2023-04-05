@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, MouseEventHandler, ReactNode } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
@@ -19,7 +19,7 @@ type Props = {
   href?: string;
   title?: string;
   loading?: boolean;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
 };
 

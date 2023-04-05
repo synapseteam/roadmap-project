@@ -61,16 +61,20 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 16px;
+      padding: 0 16px 8px;
     }
 
     &_bodyContainer {
-      padding: 8px 16px;
+      padding: 0 16px 8px;
     }
 
     &_heading {
       color: $brand-primary;
       font-weight: bold;
+    }
+
+    &_subtitle {
+      padding: 8px 15px;
     }
 
     &_headingContainer {
@@ -91,6 +95,13 @@
 
     &_btn {
       padding: 20px;
+    }
+
+    &_buttonContainer {
+      display: flex;
+      padding: 8px 15px;
+      gap: 10px;
+      justify-content: flex-end;
     }
   }
 }
