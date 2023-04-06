@@ -10,34 +10,30 @@ import styles from "./Board.module.scss";
 type Props = {
   board: {
     title: string;
-    id: number;
     items: CardType[];
   };
+  columnId: string;
 };
 
-const Board: FC<Props> = ({ board }): JSX.Element => {
+const Board: FC<Props> = ({ board, columnId }): JSX.Element => {
   return (
-    <StrictModeDroppable droppableId={board.id.toString()}>
-      {(provided) => (
-        <div
-          className={styles.column__container}
-          ref={provided.innerRef}
-          {...provided.droppableProps}
-        >
-          <Status status={board.title} />
-          <div className={styles.column__body}>
-            {board.items?.length ? (
-              board.items.map((card, index) => (
-                <Card index={index} card={card} key={card && card.title} />
-              ))
-            ) : (
-              <span>Empty</span>
-            )}
+    <div className={styles.column__container}>
+      <Status status={board.title} />
+      <StrictModeDroppable droppableId={columnId}>
+        {(provided) => (
+          <div
+            className={styles.column__body}
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
+            {board.items.map((card, index) => (
+              <Card index={index} card={card} key={card.title} />
+            ))}
+            {provided.placeholder}
           </div>
-          {provided.placeholder}
-        </div>
-      )}
-    </StrictModeDroppable>
+        )}
+      </StrictModeDroppable>
+    </div>
   );
 };
 

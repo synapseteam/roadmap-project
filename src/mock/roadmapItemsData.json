@@ -17,7 +17,7 @@
       },
       {
         "id": "6",
-        "title": "Backend",
+        "title": "Backend config",
         "comments": 3,
         "likes": 5
       }
@@ -41,7 +41,7 @@
       },
       {
         "id": "9",
-        "title": "Backend",
+        "title": "Create database",
         "comments": 3,
         "likes": 2
       }

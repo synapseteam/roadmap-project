@@ -12,6 +12,12 @@ export type CardType = {
   description?: string;
 };
 
+export type RoadmapType = {
+  title: string;
+  id: number;
+  items: CardType[] | [];
+};
+
 export type SideBarFormType = {
   title: string;
   description?: string;

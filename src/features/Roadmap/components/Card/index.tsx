@@ -16,7 +16,7 @@ type Props = {
 
 const Card: FC<Props> = ({ card, index }): JSX.Element => {
   return (
-    <Draggable draggableId={card.id} index={index}>
+    <Draggable key={card.id} draggableId={card.id} index={index}>
       {(provided) => (
         <div
           className={styles.card__container}

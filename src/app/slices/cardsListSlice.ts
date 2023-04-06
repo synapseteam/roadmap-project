@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
+import dataCards from "../../mock/cardsData.json";
 import { CardType } from "../../types";
 
 type AddCardDataType = {
@@ -8,7 +9,7 @@ type AddCardDataType = {
   description?: string;
 };
 
-const initialState: CardType[] = [];
+const initialState: CardType[] = dataCards;
 
 const cardsListSlice = createSlice({
   name: "Cards",

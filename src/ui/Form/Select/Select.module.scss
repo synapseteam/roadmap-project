@@ -11,8 +11,17 @@
   &__selectedOption {
     display: flex;
     align-items: center;
-    padding: 8px 16px;
     cursor: pointer;
+
+    &_text {
+      width: fit-content;
+      min-width: 200px;
+      padding: 8px 16px;
+      color: $brand-tertiary;
+      background-color: $brand-bg;
+      border: 1px solid $brand-border;
+      border-radius: $border-radius;
+    }
   }
 
   &__container {
@@ -37,6 +46,7 @@
       width: 100%;
       max-height: 200px;
       overflow-y: auto;
+      color: $brand-tertiary;
       border: 1px solid $brand-border;
       border-radius: 4px;
       background-color: $brand-bg;

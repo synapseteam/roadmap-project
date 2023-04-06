@@ -10,5 +10,10 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    &_filter {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }

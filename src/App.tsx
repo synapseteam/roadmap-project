@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer, Zoom } from "react-toastify";
 
@@ -11,7 +11,7 @@ import { APP_ROUTES } from "./utils/urls";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./App.module.scss";
 
-const App = (): JSX.Element => {
+const App: FC = (): JSX.Element => {
   return (
     <div className={styles.App}>
       <ToastContainer

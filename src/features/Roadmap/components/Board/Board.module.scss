@@ -16,6 +16,11 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 10px
+    gap: 10px;
+    min-height: 100%;
+
+    &_empty {
+      margin-top: 10px;
+    }
   }
 }

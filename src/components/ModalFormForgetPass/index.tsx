@@ -29,7 +29,7 @@ const ModalFormForgetPass: FC<Props> = ({
   setIsForm,
   setIsOpen,
   setIsEmail,
-}) => {
+}): JSX.Element => {
   const auth = getAuth(app);
 
   const {

@@ -8,7 +8,7 @@ type Props = {
   isOutlined?: boolean;
 };
 
-const Status: FC<Props> = ({ status, isOutlined = false }) => {
+const Status: FC<Props> = ({ status, isOutlined = false }): JSX.Element => {
   return (
     <div
       className={classNames(styles.status, {
