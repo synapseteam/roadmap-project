@@ -3,7 +3,7 @@ import React, { ForwardRefRenderFunction, InputHTMLAttributes } from "react";
 import styles from "./Input.module.scss";
 
 type InputProps = {
-  name: string;
+  name?: string;
   label?: string;
   ref: string;
 } & InputHTMLAttributes<HTMLInputElement>;

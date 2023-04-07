@@ -1,15 +1,8 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
-import {
-  FLUSH,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-  REHYDRATE,
-} from "redux-persist/es/constants";
 import storage from "redux-persist/lib/storage";
 
+// eslint-disable-next-line import/no-cycle
 import { rootReducer } from "./rootReducer";
 
 const persistConfig = {
@@ -22,13 +15,10 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) => [
-    ...getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
     }),
-  ],
 });
 
 export type AppDispatch = typeof store.dispatch;

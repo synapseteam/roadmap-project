@@ -17,3 +17,9 @@
     }
   }
 }
+
+@media (max-width:768px) {
+  .featureRequests {
+    grid-template-columns: 1fr ;
+  }
+}

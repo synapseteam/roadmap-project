@@ -15,6 +15,9 @@
     cursor: pointer;
     text-decoration: none;
     color: $brand-secondary;
+    min-height: 60px;
+    max-height: 60px;
+    overflow: hidden;
 
     &:hover {
       background-color: $brand-bg;

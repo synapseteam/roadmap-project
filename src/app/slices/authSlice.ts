@@ -1,6 +1,7 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { User } from "firebase/auth";
 
+// eslint-disable-next-line import/no-cycle
 import { RootState } from "../store";
 
 type AuthState = {

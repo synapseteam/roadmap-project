@@ -61,21 +61,30 @@ const Header: FC = (): JSX.Element => {
     formState: { errors },
   } = useForm<ProfileFormType>({
     resolver: yupResolver(schema),
+    defaultValues: {
+      displayName: userAuth?.displayName ?? "",
+    },
   });
 
   const handleChangeName = async (data: ProfileFormType) => {
     try {
       if (auth.currentUser) {
         await updateProfile(auth.currentUser, data);
+        dispatch(setUser(auth.currentUser));
       }
       toast.success("You have changed your name");
-      setIsOpen(false);
+      setIsProfileOpen(false);
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message);
       }
     }
-    reset();
+    reset(
+      { displayName: auth.currentUser?.displayName ?? "" },
+      {
+        keepValues: false,
+      }
+    );
   };
 
   const handleLoginWithGoogle = async () => {

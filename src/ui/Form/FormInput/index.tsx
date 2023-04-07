@@ -7,6 +7,8 @@ import {
 } from "react-hook-form";
 import classnames from "classnames";
 
+import Input from "../Input";
+
 import styles from "./FormInput.module.scss";
 
 type Props<T extends FieldValues> = {
@@ -30,14 +32,16 @@ const FormInput = <T extends FieldValues>({
     <Controller
       control={control}
       name={name}
-      render={({ field: { onChange } }) => (
+      defaultValue={undefined}
+      render={({ field: { onChange, value } }) => (
         <div className={styles.textField}>
           <label htmlFor={name} className={styles.input__label}>
             {label}
           </label>
           {variant === "input" ? (
             <>
-              <input
+              <Input
+                value={value}
                 className={styles.input}
                 placeholder={placeholder}
                 type="text"
@@ -46,6 +50,16 @@ const FormInput = <T extends FieldValues>({
                   onChange(text);
                 }}
               />
+              {/* <input */}
+              {/*  value={value} */}
+              {/*  className={styles.input} */}
+              {/*  placeholder={placeholder} */}
+              {/*  type="text" */}
+              {/*  disabled={disabled} */}
+              {/*  onChange={(text) => { */}
+              {/*    onChange(text); */}
+              {/*  }} */}
+              {/* /> */}
               {error && (
                 <span className={styles.input__error}>{error?.message}</span>
               )}

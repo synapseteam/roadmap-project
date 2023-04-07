@@ -19,7 +19,7 @@ const filterOptions = [
 const FeatureRequests: FC = (): JSX.Element => {
   const cards = useAppSelector((store) => store.cardList);
   const cardsReversed = [...cards].reverse();
-  const [selectValue, setSelectValue] = useState("");
+  const [selectValue, setSelectValue] = useState("newest");
   const [filtered, setFiltered] = useState<CardType[]>(cardsReversed);
 
   const search = (val: string) => {
@@ -40,10 +40,10 @@ const FeatureRequests: FC = (): JSX.Element => {
 
   useEffect(() => {
     if (selectValue === "popular") {
-      const newCards = filtered.sort((a, b) => (a.likes > b.likes ? -1 : 1));
-      console.log(newCards);
-      setFiltered(newCards);
-    } else {
+      setFiltered((prevState) =>
+        [...prevState].sort((a, b) => (a.likes > b.likes ? -1 : 1))
+      );
+    } else if (selectValue === "newest") {
       setFiltered(cardsReversed);
     }
   }, [selectValue]);
@@ -65,9 +65,8 @@ const FeatureRequests: FC = (): JSX.Element => {
             onChange={(e) => search(e.target.value)}
           />
         </div>
-
         {filtered &&
-          filtered.map((card) => <FeatureCard key={card.title} card={card} />)}
+          filtered.map((card) => <FeatureCard key={card.id} card={card} />)}
       </div>
     </div>
   );
