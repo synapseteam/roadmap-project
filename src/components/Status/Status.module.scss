@@ -1,0 +1,32 @@
+@import "../../_helpers/variables";
+
+.status {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  max-width: fit-content;
+
+  &__border {
+    border: 1px solid $brand-border;
+    border-radius: $border-radius;
+    min-height: 16px;
+  }
+
+  &__icon {
+    border-radius: 100%;
+    height: 8px;
+    margin-right: 8px;
+    min-width: 8px;
+    width: 8px;
+  }
+
+  &__iconRed {
+    background-color: $brand-error;
+  }
+  &__iconOrange {
+    background-color: $brand-warning;
+  }
+  &__iconGreen {
+    background-color: $brand-success;
+  }
+}

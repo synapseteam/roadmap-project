@@ -1,0 +1,26 @@
+@import "../../_helpers/variables";
+
+.userIcon {
+  border-radius: 50%;
+  border: 1px solid $brand-border;
+  background-color: $brand-border;
+  min-width: 24px;
+  width: 24px;
+  min-height: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 5px
+  }
+
+  &__img {
+    width: 24px;
+    height: 24px;
+  }
+}

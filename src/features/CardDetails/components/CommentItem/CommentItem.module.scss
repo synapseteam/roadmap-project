@@ -1,0 +1,39 @@
+@import "../../../../_helpers/variables";
+
+.commentItem {
+  display: flex;
+  flex-direction: column;
+  &__author {
+    color: $brand-primary;
+    font-weight: bold;
+
+    &_container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
+  &__content {
+    padding-top: 5px;
+    padding-left: 30px;
+  }
+
+  &__date {
+    color: $brand-tertiary;
+  }
+
+  &__text {
+    grid-area: 2/2;
+    margin-top: 10px;
+  }
+
+  &__buttons {
+    &_container {
+      grid-area: 3/2;
+      margin-top: 10px;
+      font-size: 12px;
+      display: flex;
+    }
+  }
+}

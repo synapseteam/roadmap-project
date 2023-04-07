@@ -5,6 +5,7 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { CardType } from "../../../../types";
+import Button from "../../../../ui/Button";
 
 import styles from "./Card.module.scss";
 
@@ -15,7 +16,7 @@ type Props = {
 
 const Card: FC<Props> = ({ card, index }): JSX.Element => {
   return (
-    <Draggable draggableId={card.id.toString()} index={index}>
+    <Draggable key={card.id} draggableId={card.id} index={index}>
       {(provided) => (
         <div
           className={styles.card__container}
@@ -23,8 +24,14 @@ const Card: FC<Props> = ({ card, index }): JSX.Element => {
           {...provided.dragHandleProps}
           ref={provided.innerRef}
         >
-          <div className={styles.card__header}>
-            <span>{card.title}</span>
+          <div className={styles.card__header_container}>
+            <Button
+              variant="text"
+              href={`/feature-requests/${card.id}`}
+              className={styles.card__header}
+            >
+              <span>{card.title}</span>
+            </Button>
           </div>
           <div className={styles.card__body}>
             <div className={styles.card__body_item}>

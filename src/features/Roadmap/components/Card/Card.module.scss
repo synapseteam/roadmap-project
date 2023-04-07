@@ -8,6 +8,7 @@
     border-radius: $border-radius;
     display: flex;
     flex-direction: column;
+    transition: 0.2s linear all;
     gap: 10px;
     padding: 16px;
     cursor: pointer;
@@ -20,6 +21,16 @@
   &__header {
     color: $brand-primary;
     font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s linear all;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &_container {
+      display: flex;
+      justify-content: flex-start;
+    }
   }
   &__body {
     display: flex;

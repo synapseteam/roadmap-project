@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { Droppable } from "react-beautiful-dnd";
-import classNames from "classnames";
 
+import Status from "../../../../components/Status";
 import { CardType } from "../../../../types";
+import { StrictModeDroppable } from "../../../../utils/StrictModeDroppable";
 import Card from "../Card";
 
 import styles from "./Board.module.scss";
@@ -10,45 +10,30 @@ import styles from "./Board.module.scss";
 type Props = {
   board: {
     title: string;
-    id: number;
     items: CardType[];
   };
+  columnId: string;
 };
 
-const Board: FC<Props> = ({ board }): JSX.Element => {
+const Board: FC<Props> = ({ board, columnId }): JSX.Element => {
   return (
-    <Droppable droppableId={board.id.toString()}>
-      {(provided) => (
-        <div
-          className={styles.column__container}
-          ref={provided.innerRef}
-          {...provided.droppableProps}
-        >
-          <div className={styles.column__header}>
-            <div
-              className={classNames(styles.column__header_icon, {
-                [styles.column__header_iconRed]: board.title === "Pending",
-                [styles.column__header_iconOrange]:
-                  board.title === "In progress",
-                [styles.column__header_iconGreen]: board.title === "Shipped",
-              })}
-            />
-            <span>{board.title}</span>
+    <div className={styles.column__container}>
+      <Status status={board.title} />
+      <StrictModeDroppable droppableId={columnId}>
+        {(provided) => (
+          <div
+            className={styles.column__body}
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
+            {board.items.map((card, index) => (
+              <Card index={index} card={card} key={card.title} />
+            ))}
+            {provided.placeholder}
           </div>
-
-          <div className={styles.column__body}>
-            {board.items?.length ? (
-              board.items.map((card, index) => (
-                <Card index={index} card={card} key={card && card.title} />
-              ))
-            ) : (
-              <span>Empty</span>
-            )}
-          </div>
-          {provided.placeholder}
-        </div>
-      )}
-    </Droppable>
+        )}
+      </StrictModeDroppable>
+    </div>
   );
 };
 

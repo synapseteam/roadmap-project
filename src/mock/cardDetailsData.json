@@ -1,0 +1,39 @@
+{
+  "title": "Add backend to the application",
+  "description": "Add API for application",
+  "status": "Pending",
+  "author": {
+    "displayName": "John Wick",
+    "email": "johnwick@gmail.com",
+    "id": 222,
+    "photoURL": null
+  },
+  "votes": 2,
+  "voters": [
+    {
+      "displayName": "Thor Odinson",
+      "email": "thorodinson@gmail.com",
+      "id": 111,
+      "photoURL": null
+    },
+    {
+      "displayName": "Captain America",
+      "email": "captainamerica@gmail.com",
+      "id": 123,
+      "photoURL": null
+    }
+  ],
+  "createdAt": "2022-10-05T14:48:00.000Z",
+  "comments": [
+    {
+      "author": {
+        "displayName": "Jackie Chan",
+        "id": 23,
+        "email": "chan@gmail.com",
+        "photoURL": null
+      },
+      "text": "We need to add a database!",
+      "createdAt": "2011-11-05T15:48:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+@import '../../../_helpers/variables';
+
+.input {
+  color: $brand-primary;
+  background-color: $brand-bg;
+  border: 1px solid $brand-border;
+  border-radius: $border-radius;
+  padding: 8px 16px;
+  margin-top: 5px;
+
+  &__textarea {
+    resize: none;
+    min-height: 60px;
+    font-family: inherit;
+  }
+
+  &__label {
+    color: $brand-secondary
+  }
+
+  &__error {
+    color: $brand-error;
+  }
+}
+
+.textField {
+  display: flex;
+  flex-direction: column;
+}

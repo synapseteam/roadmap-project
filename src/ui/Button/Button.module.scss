@@ -24,6 +24,7 @@
       background-color: $brand-bg-modal;
       border-color: $brand-border;
       color: $brand-secondary;
+      padding: 8px 16px;
 
       &:hover {
         background-color: $brand-bg-secondary;
@@ -36,6 +37,7 @@
       background: none;
       border-color: $brand-border;
       color: $brand-secondary;
+      padding: 8px 16px;
 
       &:hover {
         background-color: $brand-bg-secondary;

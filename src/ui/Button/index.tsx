@@ -1,31 +1,27 @@
-import React, { FC } from "react";
+import React, { FC, MouseEventHandler, ReactNode } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classnames from "classnames";
-import PT from "prop-types";
 
 import styles from "./Button.module.scss";
 
-const propTypes = {
-  children: PT.oneOfType([PT.string, PT.element]),
-  // TODO find how to add TS Type to prop types
-  // eslint-disable-next-line react/forbid-prop-types
-  icon: PT.any,
-  iconSize: PT.number,
-  iconRight: PT.bool,
-  className: PT.string,
-  submit: PT.bool,
-  size: PT.oneOf(["minimal", "small", "default"]),
-  variant: PT.oneOf(["filled", "outlined", "text"]),
-  href: PT.oneOfType([PT.string, PT.object]),
-  title: PT.string,
-  loading: PT.bool,
-  onClick: PT.func,
-  disabled: PT.bool,
+type Props = {
+  children?: ReactNode;
+  icon?: IconProp;
+  iconSize?: number;
+  iconRight?: boolean;
+  className?: string;
+  submit?: boolean;
+  size?: "minimal" | "small" | "default";
+  variant?: "filled" | "outlined" | "text";
+  href?: string;
+  title?: string;
+  loading?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 };
-
-type Props = PT.InferProps<typeof propTypes>;
 
 const Button: FC<Props> = ({
   children,
@@ -33,13 +29,13 @@ const Button: FC<Props> = ({
   iconSize,
   iconRight,
   className,
-  submit,
+  submit = false,
   href,
-  variant,
-  size,
+  variant = "filled",
+  size = "default",
   title,
-  disabled,
-  loading,
+  disabled = false,
+  loading = false,
   onClick,
   ...props
 }): JSX.Element => {
@@ -131,5 +127,23 @@ const Button: FC<Props> = ({
   );
 };
 
-Button.propTypes = propTypes;
+// TODO find how to add TS Type to prop types
+// const propTypes = {
+//   children: PT.oneOfType([PT.string, PT.element]),
+//   // eslint-disable-next-line react/forbid-prop-types
+//   icon: PT.any,
+//   iconSize: PT.number,
+//   iconRight: PT.bool,
+//   className: PT.string,
+//   submit: PT.bool,
+//   size: PT.oneOf(["minimal", "small", "default"]),
+//   variant: PT.oneOf(["filled", "outlined", "text"]),
+//   href: PT.oneOfType([PT.string, PT.object]),
+//   title: PT.string,
+//   loading: PT.bool,
+//   onClick: PT.func,
+//   disabled: PT.bool,
+// };
+
+// Button.propTypes = propTypes;
 export default Button;

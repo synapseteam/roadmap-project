@@ -1,0 +1,25 @@
+.featureRequests {
+  display: grid;
+  grid-template-columns: 4fr 8fr ;
+  justify-self: center;
+  margin: 0 auto;
+  gap: 20px;
+  max-width: 960px;
+
+  &__board {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &_filter {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .featureRequests {
+    grid-template-columns: 1fr ;
+  }
+}
